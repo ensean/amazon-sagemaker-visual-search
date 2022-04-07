@@ -7,7 +7,7 @@ Resources:
     Properties:
       InstanceType: ml.t3.medium
       RoleArn: !GetAtt Role.Arn
-      DefaultCodeRepository: https://github.com/aws-samples/amazon-sagemaker-visual-search
+      DefaultCodeRepository: https://github.com/ensean/amazon-sagemaker-visual-search
 
   Role:
     Type: AWS::IAM::Role
@@ -80,7 +80,7 @@ Resources:
             Resource: !Sub arn:aws:es:${AWS::Region}:${AWS::AccountId}:domain/*/*
       ElasticsearchVersion: 7.4
       ElasticsearchClusterConfig:
-        InstanceType: "t2.small.elasticsearch"
+        InstanceType: "t3.medium.elasticsearch"
       EBSOptions:
         EBSEnabled: True
         VolumeSize: 10
